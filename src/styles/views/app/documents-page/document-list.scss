@@ -1,0 +1,11 @@
+.document-list {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

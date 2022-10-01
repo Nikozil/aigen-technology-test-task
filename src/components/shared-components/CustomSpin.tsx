@@ -6,7 +6,7 @@ const CustomSpin: React.FC<ISpin> = ({ size = 35 }) => {
   return (
     <Spin
       indicator={
-        <LoadingOutlined style={{ fontSize: size, color: '#fff' }} spin />
+        <LoadingOutlined style={{ fontSize: size, color: '#000' }} spin />
       }
     />
   );
