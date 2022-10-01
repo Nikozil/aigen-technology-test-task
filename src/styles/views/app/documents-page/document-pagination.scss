@@ -1,0 +1,33 @@
+.document-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $support-green-light !important;
+
+  .ant-pagination-item-active {
+    color: $support-green-light !important;
+    border-color: $support-green-light !important;
+  }
+
+  .ant-pagination-item-active a {
+    color: $support-green !important;
+    font-weight: 900;
+  }
+
+  .ant-pagination-item:hover {
+    border-color: $support-green-light !important;
+  }
+
+  .ant-pagination-item a:hover {
+    color: $support-green !important;
+    font-weight: 900;
+  }
+
+  .ant-pagination-item-link:hover {
+    border-color: $support-green-light !important;
+
+    color: $support-green !important;
+    font-weight: 900;
+  }
+}

@@ -1,27 +1,37 @@
-import React, { useState } from 'react';
+import LoadingHoc from 'components/shared-components/LoadingHoc';
+import { useAppSelector } from 'hooks/redux-hooks';
+import { useState } from 'react';
+import { selectSearchData } from 'redux/selectors/documents';
 import { useGetDocumentsQuery } from 'redux/services/documentsApi';
 import DocumentItem from './DocumentItem';
-import Loading from 'components/shared-components/Loading';
+import Paginator from './Paginator';
 
 const DocumentsList = () => {
-  const { data, error, isLoading } = useGetDocumentsQuery({ _page: 1 });
+  const { page } = useAppSelector(selectSearchData);
+
+  const { data, isLoading, isFetching } = useGetDocumentsQuery({
+    _page: page,
+  });
+
   const [showDetailsId, setShowDetailsId] = useState<showDetailsIdType>(null);
+
   return (
     <section className="document-list">
-      {isLoading ? (
-        <Loading />
-      ) : (
+      <LoadingHoc loading={isLoading}>
         <div className="document-list__list">
-          {data?.map((document) => (
-            <DocumentItem
-              key={document.id}
-              document={document}
-              showDetailsId={showDetailsId}
-              setShowDetailsId={setShowDetailsId}
-            />
-          ))}
+          <LoadingHoc loading={isFetching}>
+            {data?.documents.map((document) => (
+              <DocumentItem
+                key={document.id}
+                document={document}
+                showDetailsId={showDetailsId}
+                setShowDetailsId={setShowDetailsId}
+              />
+            ))}
+          </LoadingHoc>
         </div>
-      )}
+        <Paginator total={data?.totalCount} />
+      </LoadingHoc>
     </section>
   );
 };
