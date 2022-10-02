@@ -2,6 +2,8 @@
   border: 1px solid $support-green;
   border: radius 2px;
 
+  user-select: none;
+
   &__title {
     height: 60px;
     width: 100%;
@@ -29,8 +31,7 @@
     min-height: 200px;
     width: 100%;
 
-    padding: 15px;
-    padding-bottom: 25px;
+    padding: 25px;
   }
 
   &__description {

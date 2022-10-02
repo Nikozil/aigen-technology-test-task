@@ -1,8 +1,13 @@
 @import 'document-item.scss';
 @import 'document-list.scss';
 @import 'document-pagination.scss';
+@import 'document-search.scss';
 
 .documents-page {
-  max-width: 940px;
+  max-width: 1065px;
   margin: auto;
+
+  width: 100%;
+  display: flex;
+  gap: 20px;
 }

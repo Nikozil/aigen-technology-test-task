@@ -6,20 +6,22 @@
   justify-content: space-between;
   align-items: center;
 
-  background: linear-gradient($support-second 40%, rgba($support-second, 0.5));
+  // background: linear-gradient($support-second 40%, rgba($support-second, 0.5));
+  background: $support-grey;
   &__exit-btn {
     min-width: 75px;
     span {
       color: $white;
     }
   }
-  .ant-btn-dangerous.ant-btn-primary[disabled] {
-    background: #ff4d4f;
-    border-color: #ff4d4f;
-    cursor: pointer;
-  }
+  // .ant-btn-dangerous.ant-btn-primary[disabled] {
+  //   background: #ff4d4f;
+  //   border-color: #ff4d4f;
+  //   cursor: pointer;
+  // }
 
   h1 {
-    color: $text;
+    color: $white;
+    font-size: 20px;
   }
 }
