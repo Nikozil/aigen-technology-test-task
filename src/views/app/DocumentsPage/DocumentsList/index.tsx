@@ -10,7 +10,7 @@ import Paginator from './Paginator';
 const DocumentsList = () => {
   const searchData = useAppSelector(selectApiSearchData);
 
-  const debounceSearch = useDebounce(searchData, 1000);
+  const debounceSearch = useDebounce(searchData, 400);
 
   const { data, isLoading, isFetching } = useGetDocumentsQuery(debounceSearch);
 
