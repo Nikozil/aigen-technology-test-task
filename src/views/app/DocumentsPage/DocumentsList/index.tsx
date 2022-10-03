@@ -1,5 +1,6 @@
 import LoadingHoc from 'components/shared-components/LoadingHoc';
 import { useAppSelector } from 'hooks/redux-hooks';
+import { useDebounce } from 'hooks/useDebounce';
 import { useState } from 'react';
 import { selectApiSearchData } from 'redux/selectors/documents';
 import { useGetDocumentsQuery } from 'redux/services/documentsApi';
@@ -9,7 +10,9 @@ import Paginator from './Paginator';
 const DocumentsList = () => {
   const searchData = useAppSelector(selectApiSearchData);
 
-  const { data, isLoading, isFetching } = useGetDocumentsQuery(searchData);
+  const debounceSearch = useDebounce(searchData, 1000);
+
+  const { data, isLoading, isFetching } = useGetDocumentsQuery(debounceSearch);
 
   const [showDetailsId, setShowDetailsId] = useState<showDetailsIdType>(null);
 

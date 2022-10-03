@@ -23,6 +23,7 @@ export const documentsSlice = createSlice({
       const { key, value } = action.payload;
 
       state.searchData = { ...state.searchData, [key]: value };
+      state.searchData.page = 1;
     },
   },
 });

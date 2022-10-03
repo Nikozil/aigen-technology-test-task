@@ -35,8 +35,8 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       onChange={onChange}>
       <Option value="id">ID документа</Option>
       <Option value="name">Название</Option>
-      <Option value="start_date">Дата начала</Option>
-      <Option value="end_date">Дата окончания</Option>
+      <Option value="date_start">Дата начала</Option>
+      <Option value="date_end">Дата окончания</Option>
     </Select>
   );
 };
